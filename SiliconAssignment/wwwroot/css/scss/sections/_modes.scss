@@ -1,0 +1,35 @@
+#modes {
+    height: 988px;
+        display: flex;
+        align-items: top;
+        position: relative;
+        justify-content: center;
+
+        .black {
+            width: 50%;
+            background-color: $gray-900;
+            display: flex;
+            justify-content: end;
+            h1 {
+                color: $white;
+                display: flex;
+                justify-content: end;
+                margin-right: 10px;
+                margin-top: 100px;
+            }
+            }
+        .white {
+            width: 50%;
+            
+            h1 {
+                color: $gray-900;
+                margin-left: 10px;
+                margin-top: 100px;
+            }
+        }
+
+        img {
+            position: absolute;
+            top: 25%;
+        }
+    }

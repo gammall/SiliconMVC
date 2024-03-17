@@ -1,0 +1,90 @@
+#courses {
+
+    .container {
+        margin-top: 50px;
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+
+            .roll-down {
+                width: 300px;
+                height: 50px;
+                background-color: white;
+                border: 1px solid $gray-400;
+                border-radius: 7px;
+            }
+
+            .search {
+                display: flex;
+                gap: 20px;
+
+                div {
+                    position: relative;
+
+                    i {
+                        position: absolute;
+                        right: 15px;
+                        top: 15px;
+                    }
+                }
+            }
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+
+            .box1 {
+                width: 32%;
+                height: 473px;
+                border-radius: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                @include shadow-s;
+
+                img {
+                    border-radius: 10px 10px 0 0;
+                    width: 100%;
+                }
+
+                .info-text {
+                    width: 90%;
+                    display: flex;
+                    flex-direction: column;
+
+                    h5 {
+                        color: $gray-800;
+                    }
+
+                    p:nth-child(odd) {
+                        color: $theme;
+                        font-weight: 800;
+                    }
+
+                    .border {
+                        border: 1px solid rgb(213, 213, 213);
+                    }
+
+                    .sub-info {
+                        width: 70%;
+                        display: flex;
+                        margin-top: 10px;
+                        align-items: center;
+
+                        p {
+                            margin-right: 30px;
+                            margin-left: 5px;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

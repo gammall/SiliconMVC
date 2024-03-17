@@ -1,0 +1,28 @@
+.showcase {
+    display: flex;
+    height: 100%;
+
+    .container {
+        width: 34%;
+        margin-left: 200px;
+        margin-top: 120px;
+
+        .content {
+
+
+            p {
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+
+            a {
+                width: 210px;
+                margin-bottom: 40px;
+            }
+        }
+    }
+
+    img {
+        width: 1007px;
+    }
+}
