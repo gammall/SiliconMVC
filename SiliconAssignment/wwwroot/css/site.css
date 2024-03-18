@@ -718,7 +718,7 @@ footer .container .social-media {
   margin-top: 50px;
 }
 #main .section {
-  width: 500px;
+  width: 900px;
   height: 600px;
   display: flex;
   flex-direction: column;
@@ -736,6 +736,9 @@ footer .container .social-media {
   justify-content: start;
   align-items: start;
 }
+#main .section form .content {
+  width: 100%;
+}
 #main .section form h5 {
   line-height: 160%;
   font-weight: 400;
@@ -743,20 +746,14 @@ footer .container .social-media {
   font-family: "Manrope", sans-serif;
   font-size: 16px !important;
 }
-#main .section form .name {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-}
-#main .section form .name div {
-  gap: 10px;
-  width: 48%;
-}
-#main .section form input {
+#main .section form input-group {
   width: 100%;
   height: 50px;
   border-radius: 10px;
   border: 1px solid #D4D7E5;
+}
+#main .section form .field-validation-error {
+  color: red;
 }
 #main .section form h5 {
   margin-top: 10px;
@@ -772,4 +769,17 @@ footer .container .social-media {
 }
 #main .section form button {
   width: 100%;
+}
+#main .section form .checkbox-group {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+#main .section form .checkbox-group label {
+  width: 100%;
+}
+#main .section form .checkbox-group input {
+  width: 15px;
+  margin-right: 9px;
 }
