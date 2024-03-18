@@ -709,77 +709,152 @@ footer .container .social-media {
   width: 100%;
 }
 
-#main {
-  height: 100vh;
+/*#main {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+
+    .section {
+        width: 900px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+
+            .content {
+                width: 100%;
+            }
+
+            h5 {
+                @include text-m;
+            }
+
+            input-group {
+                width: 100%;
+                height: 50px;
+                border-radius: 10px;
+                border: 1px solid $gray-400;
+            }
+
+            .field-validation-error {
+                color: red;
+            }   
+
+            h5 {
+                margin-top: 10px;
+            }
+
+            .remember {
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin-bottom: 20px;
+                    margin-right: 10px;
+                    width: 15px;
+                }
+            }
+
+            button {
+                width: 100%;
+            }
+
+            .checkbox-group {
+                margin-bottom: 20px;
+                margin-right: 10px;
+                display: flex;
+                align-items: center;
+
+                label {
+                    width: 100%;
+                }
+
+                input {
+                    width: 15px;
+                    margin-right: 9px;
+                }
+            }
+        }
+    }
+}*/
+#signup {
+  height: 100%;
+}
+#signup .container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-}
-#main .section {
-  width: 900px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-}
-#main .section p {
-  margin-bottom: 10px;
-}
-#main .section form {
-  width: 100%;
   height: 100%;
+  width: 1000px;
+}
+#signup .container include lg {
+  width: 60%;
+}
+#signup .container include xl {
+  width: 40%;
+}
+#signup .container form {
+  padding: 1rem;
+  width: 100%;
+}
+#signup .container form .content {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
+}
+#signup .container form .content include md {
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms" "button button";
+}
+#signup .container form .content .input-group {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
 }
-#main .section form .content {
-  width: 100%;
-}
-#main .section form h5 {
-  line-height: 160%;
-  font-weight: 400;
-  color: #565973;
-  font-family: "Manrope", sans-serif;
-  font-size: 16px !important;
-}
-#main .section form input-group {
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  border: 1px solid #D4D7E5;
-}
-#main .section form .field-validation-error {
+#signup .container form .content .input-group .error-message {
   color: red;
 }
-#main .section form h5 {
-  margin-top: 10px;
+#signup .container form .content .input-group input {
+  border-radius: 10px;
+  border: 1px solid #B4B7C9;
+  height: 50px;
 }
-#main .section form .remember {
-  display: flex;
-  align-items: center;
+#signup .container form .content #form-firstname {
+  grid-area: firstname;
 }
-#main .section form .remember input {
-  margin-bottom: 20px;
-  margin-right: 10px;
-  width: 15px;
+#signup .container form .content #form-lastname {
+  grid-area: lastname;
 }
-#main .section form button {
-  width: 100%;
+#signup .container form .content #form-email {
+  grid-area: email;
 }
-#main .section form .checkbox-group {
-  margin-bottom: 20px;
-  margin-right: 10px;
-  display: flex;
-  align-items: center;
+#signup .container form .content #form-password {
+  grid-area: password;
 }
-#main .section form .checkbox-group label {
-  width: 100%;
+#signup .container form .content #form-confirm {
+  grid-area: confirm;
 }
-#main .section form .checkbox-group input {
-  width: 15px;
-  margin-right: 9px;
+#signup .container form .content #form-terms {
+  grid-area: terms;
+}
+#signup .container form #form-button {
+  grid-area: button;
+  width: 950px;
 }

@@ -1,4 +1,4 @@
-#main {
+/*#main {
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -79,6 +79,89 @@
                     width: 15px;
                     margin-right: 9px;
                 }
+            }
+        }
+    }
+}*/
+
+
+#signup {
+    height: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 1000px;
+
+        include lg {
+            width: 60%;
+        }
+
+        include xl {
+            width: 40%;
+        }
+
+        form {
+            padding: 1rem;
+            width: 100%;
+
+            .content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr;
+                grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
+
+                include md {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms" "button button";
+                }
+
+                .input-group {
+                    display: flex;
+                    flex-direction: column;
+
+                    .error-message {
+                        color: red;
+                    }
+                }
+
+                .input-group input {
+                    border-radius: 10px;
+                    border: 1px solid $gray-500;
+                    height: 50px;
+                }
+
+
+                #form-firstname {
+                    grid-area: firstname;
+                }
+
+                #form-lastname {
+                    grid-area: lastname;
+                }
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-confirm {
+                    grid-area: confirm;
+                }
+
+                #form-terms {
+                    grid-area: terms;
+                }
+            }
+
+            #form-button {
+                grid-area: button;
+                width: 950px;
             }
         }
     }
