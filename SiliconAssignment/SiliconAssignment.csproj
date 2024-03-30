@@ -17,8 +17,4 @@
     <None Include="wwwroot\images\svg\bx-check-circle.svg" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>

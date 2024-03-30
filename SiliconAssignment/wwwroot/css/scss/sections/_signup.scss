@@ -1,68 +1,63 @@
-#main {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+#signup {
+    height: 100%;
 
-    .section {
-        width: 500px;
-        height: 600px;
+    .container {
         display: flex;
-        flex-direction: column;
-        align-items: start;
         justify-content: center;
-    
-        p {
-            margin-bottom: 10px;
-        }
-    
-        form {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: start;
+        align-items: center;
+        height: 100%;
 
-            h5 {
-                @include text-m;
-            }
-            
-            .name {
-                display: flex;
-                width: 100%;
-                justify-content: space-between;
-                
-                div {
-                    gap: 10px;
-                    width: 48%;
+        @include lg {
+            width: 60%;
+        }
+
+        @include xl {
+            width: 40%;
+        }
+
+        form {
+            padding: 1rem;
+
+            #content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr;
+                grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
+
+                @include md {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms terms";
                 }
-            }
-    
-            input {
-                width: 100%;
-                height: 50px;
-                border-radius: 10px;
-                border: 1px solid $gray-400;
-            }
-            h5 {
-                margin-top: 10px;
-            }
-            .remember {
-                display: flex;
-                align-items: center;
-                input {
-                    margin-bottom: 20px;
-                    margin-right: 10px;
-                    width: 15px;
+
+                #form-firstname {
+                    grid-area: firstname;
                 }
-            }
-            button {
-                width: 100%;
+
+                #form-lastname {
+                    grid-area: lastname;
+                }
+
+                #form-email {
+                    grid-area: email;
+                }
+
+                #form-password {
+                    grid-area: password;
+                }
+
+                #form-confirm {
+                    grid-area: confirm;
+                }
+
+                #form-terms {
+                    grid-area: terms;
+                    padding: 1rem 0;
+                }
+
+                #form-submit {
+                    grid-area: button;
+                }
             }
         }
     }
 }
-
