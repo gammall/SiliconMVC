@@ -181,6 +181,59 @@ h6, .h6 {
   grid-template-rows: auto 1fr auto;
 }
 
+form {
+  width: 100%;
+  display: grid;
+}
+form .input-group {
+  display: grid;
+}
+form .checkbox-group {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+form .checkbox-group input[type=checkbox] {
+  height: 1.2rem;
+  width: 1.2rem;
+  border: 0.063rem solid red;
+}
+form .checkbox-group label {
+  margin: 0;
+  font-weight: 400;
+}
+form label {
+  margin-bottom: 0.188rem;
+  font-weight: 700;
+}
+form input {
+  padding: 1rem;
+  border-radius: 0.5rem !important;
+  border: 0.063rem solid #D4D7E5;
+}
+form input::placeholder {
+  opacity: 0.4;
+}
+form input.input-validation-error {
+  border: 0.063rem solid #EF4444 !important;
+  color: #EF4444;
+}
+form input.input-validation-error::placeholder {
+  color: #EF4444;
+}
+form span.field-validation-error {
+  position: relative;
+  top: 0;
+  right: 0;
+  line-height: 160%;
+  font-weight: 400;
+  color: #565973;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px !important;
+  color: #EF4444;
+}
+
 a {
   line-height: 160%;
   font-weight: 400;
@@ -355,6 +408,63 @@ a:hover {
   color: #FFFFFF;
 }
 
+#signup {
+  height: 100%;
+}
+#signup .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+@media (min-width: 992px) {
+  #signup .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #signup .container {
+    width: 40%;
+  }
+}
+#signup .container form {
+  padding: 1rem;
+}
+#signup .container form #content {
+  display: grid;
+  gap: 1rem 2rem;
+  grid-template-columns: 1fr;
+  grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
+}
+@media (min-width: 768px) {
+  #signup .container form #content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms terms";
+  }
+}
+#signup .container form #content #form-firstname {
+  grid-area: firstname;
+}
+#signup .container form #content #form-lastname {
+  grid-area: lastname;
+}
+#signup .container form #content #form-email {
+  grid-area: email;
+}
+#signup .container form #content #form-password {
+  grid-area: password;
+}
+#signup .container form #content #form-confirm {
+  grid-area: confirm;
+}
+#signup .container form #content #form-terms {
+  grid-area: terms;
+  padding: 1rem 0;
+}
+#signup .container form #content #form-submit {
+  grid-area: button;
+}
+
 header {
   padding: 15px 0;
   height: 100%;
@@ -420,6 +530,54 @@ footer .container .social-media {
   align-items: center;
   gap: 20px;
   margin-bottom: 30px;
+}
+
+#main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#main .section {
+  width: 500px;
+  height: 526px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+}
+#main .section p {
+  margin-bottom: 20px;
+}
+#main .section form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+#main .section form input {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #D4D7E5;
+}
+#main .section form h5 {
+  margin-top: 30px;
+}
+#main .section form .remember {
+  display: flex;
+  align-items: center;
+}
+#main .section form .remember input {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  width: 15px;
+}
+#main .section form button {
+  width: 100%;
 }
 
 .showcase {
@@ -659,202 +817,4 @@ footer .container .social-media {
   margin-right: 30px;
   margin-left: 5px;
   margin-top: 15px;
-}
-
-#main {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-#main .section {
-  width: 500px;
-  height: 526px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-}
-#main .section p {
-  margin-bottom: 20px;
-}
-#main .section form {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-}
-#main .section form input {
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  border: 1px solid #D4D7E5;
-}
-#main .section form h5 {
-  margin-top: 30px;
-}
-#main .section form .remember {
-  display: flex;
-  align-items: center;
-}
-#main .section form .remember input {
-  margin-bottom: 20px;
-  margin-right: 10px;
-  width: 15px;
-}
-#main .section form button {
-  width: 100%;
-}
-
-/*#main {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-
-
-    .section {
-        width: 900px;
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        form {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: start;
-
-            .content {
-                width: 100%;
-            }
-
-            h5 {
-                @include text-m;
-            }
-
-            input-group {
-                width: 100%;
-                height: 50px;
-                border-radius: 10px;
-                border: 1px solid $gray-400;
-            }
-
-            .field-validation-error {
-                color: red;
-            }   
-
-            h5 {
-                margin-top: 10px;
-            }
-
-            .remember {
-                display: flex;
-                align-items: center;
-
-                input {
-                    margin-bottom: 20px;
-                    margin-right: 10px;
-                    width: 15px;
-                }
-            }
-
-            button {
-                width: 100%;
-            }
-
-            .checkbox-group {
-                margin-bottom: 20px;
-                margin-right: 10px;
-                display: flex;
-                align-items: center;
-
-                label {
-                    width: 100%;
-                }
-
-                input {
-                    width: 15px;
-                    margin-right: 9px;
-                }
-            }
-        }
-    }
-}*/
-#signup {
-  height: 100%;
-}
-#signup .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 1000px;
-}
-#signup .container include lg {
-  width: 60%;
-}
-#signup .container include xl {
-  width: 40%;
-}
-#signup .container form {
-  padding: 1rem;
-  width: 100%;
-}
-#signup .container form .content {
-  display: grid;
-  gap: 1rem 2rem;
-  grid-template-columns: 1fr;
-  grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
-}
-#signup .container form .content include md {
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms" "button button";
-}
-#signup .container form .content .input-group {
-  display: flex;
-  flex-direction: column;
-}
-#signup .container form .content .input-group .error-message {
-  color: red;
-}
-#signup .container form .content .input-group input {
-  border-radius: 10px;
-  border: 1px solid #B4B7C9;
-  height: 50px;
-}
-#signup .container form .content #form-firstname {
-  grid-area: firstname;
-}
-#signup .container form .content #form-lastname {
-  grid-area: lastname;
-}
-#signup .container form .content #form-email {
-  grid-area: email;
-}
-#signup .container form .content #form-password {
-  grid-area: password;
-}
-#signup .container form .content #form-confirm {
-  grid-area: confirm;
-}
-#signup .container form .content #form-terms {
-  grid-area: terms;
-}
-#signup .container form #form-button {
-  grid-area: button;
-  width: 950px;
 }

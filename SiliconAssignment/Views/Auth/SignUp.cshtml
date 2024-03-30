@@ -10,18 +10,18 @@
             <h1>Create Account</h1>
             <p>Already have an account? <a asp-controller="Auth" asp-action="SignIn">Sign in here</a></p>
 
-            <div class="content">
-                <div id="form-firstname" class="input-group">
-                    <label asp-for=Form.FirstName></label>
-                    <span class="error-message" asp-validation-for="Form.FirstName"></span>
-                    <input asp-for="Form.FirstName" />
-                </div>
+            <div id="content">
+                    <div id="form-firstname" class="input-group">
+                        <label asp-for=Form.FirstName></label>
+                        <span class="error-message" asp-validation-for="Form.FirstName"></span>
+                        <input asp-for="Form.FirstName" />
+                    </div>
 
-                <div id="form-lastname" class="input-group">
-                    <label asp-for=Form.LastName></label>
-                    <span class="error-message" asp-validation-for="Form.LastName"></span>
-                    <input asp-for="Form.LastName" />
-                </div>
+                    <div id="form-lastname" class="input-group">
+                        <label asp-for=Form.LastName></label>
+                        <span class="error-message" asp-validation-for="Form.LastName"></span>
+                        <input asp-for="Form.LastName" />
+                    </div>
 
                 <div id="form-email" class="input-group">
                     <label asp-for=Form.Email></label>
@@ -47,7 +47,7 @@
                     <span class="error-message" asp-validation-for="Form.Terms"></span>
                 </div>
             </div>
-            <button class="btn-theme-s" id="form-button" type="submit">@Model.Title</button>
+            <button class="btn-theme-s" id="form-submit" type="submit">@Model.Title</button>
         </form>
     </div>
 </section>

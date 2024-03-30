@@ -1,90 +1,3 @@
-/*#main {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-
-
-    .section {
-        width: 900px;
-        height: 600px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: center;
-
-        p {
-            margin-bottom: 10px;
-        }
-
-        form {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: start;
-            align-items: start;
-
-            .content {
-                width: 100%;
-            }
-
-            h5 {
-                @include text-m;
-            }
-
-            input-group {
-                width: 100%;
-                height: 50px;
-                border-radius: 10px;
-                border: 1px solid $gray-400;
-            }
-
-            .field-validation-error {
-                color: red;
-            }   
-
-            h5 {
-                margin-top: 10px;
-            }
-
-            .remember {
-                display: flex;
-                align-items: center;
-
-                input {
-                    margin-bottom: 20px;
-                    margin-right: 10px;
-                    width: 15px;
-                }
-            }
-
-            button {
-                width: 100%;
-            }
-
-            .checkbox-group {
-                margin-bottom: 20px;
-                margin-right: 10px;
-                display: flex;
-                align-items: center;
-
-                label {
-                    width: 100%;
-                }
-
-                input {
-                    width: 15px;
-                    margin-right: 9px;
-                }
-            }
-        }
-    }
-}*/
-
-
 #signup {
     height: 100%;
 
@@ -93,46 +6,28 @@
         justify-content: center;
         align-items: center;
         height: 100%;
-        width: 1000px;
 
-        include lg {
+        @include lg {
             width: 60%;
         }
 
-        include xl {
+        @include xl {
             width: 40%;
         }
 
         form {
             padding: 1rem;
-            width: 100%;
 
-            .content {
+            #content {
                 display: grid;
                 gap: 1rem 2rem;
                 grid-template-columns: 1fr;
                 grid-template-areas: "firstname" "lastname" "email" "password" "confirm" "terms" "button";
 
-                include md {
+                @include md {
                     grid-template-columns: 1fr 1fr;
-                    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms" "button button";
+                    grid-template-areas: "firstname lastname" "email email" "password password" "confirm confirm" "terms terms";
                 }
-
-                .input-group {
-                    display: flex;
-                    flex-direction: column;
-
-                    .error-message {
-                        color: red;
-                    }
-                }
-
-                .input-group input {
-                    border-radius: 10px;
-                    border: 1px solid $gray-500;
-                    height: 50px;
-                }
-
 
                 #form-firstname {
                     grid-area: firstname;
@@ -156,12 +51,12 @@
 
                 #form-terms {
                     grid-area: terms;
+                    padding: 1rem 0;
                 }
-            }
 
-            #form-button {
-                grid-area: button;
-                width: 950px;
+                #form-submit {
+                    grid-area: button;
+                }
             }
         }
     }
