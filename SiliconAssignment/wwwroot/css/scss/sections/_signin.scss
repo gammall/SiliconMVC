@@ -1,0 +1,27 @@
+#signin {
+    height: 100%;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        @include lg {
+            width: 60%;
+        }
+
+        @include xl {
+            width: 40%;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            button {
+                margin-top: 25px;
+            }
+        }
+    }
+}

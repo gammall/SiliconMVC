@@ -465,6 +465,34 @@ a:hover {
   grid-area: button;
 }
 
+#signin {
+  height: 100%;
+}
+#signin .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+@media (min-width: 992px) {
+  #signin .container {
+    width: 60%;
+  }
+}
+@media (min-width: 1200px) {
+  #signin .container {
+    width: 40%;
+  }
+}
+#signin .container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#signin .container form button {
+  margin-top: 25px;
+}
+
 header {
   padding: 15px 0;
   height: 100%;
@@ -520,6 +548,8 @@ footer {
   font-family: "Manrope", sans-serif;
   font-size: 16px !important;
   color: #9397AD;
+  position: inherit;
+  bottom: 10px;
 }
 footer .container {
   text-align: center;

@@ -1,25 +1,51 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Infrastructure.Services;
+using Microsoft.AspNetCore.Mvc;
 using SiliconAssignment.ViewModels;
 
 namespace SiliconAssignment.Controllers;
 
-public class AuthController : Controller
+public class AuthController(UserService userService) : Controller
 {
+
+    private readonly UserService _userService = userService;
+
     [Route("/signup")]
     [HttpGet]
-    public IActionResult SignUp()
+    public IActionResult SignUp() => View(new SignUpViewModel());
+
+
+    [HttpPost]
+    [Route("/signup")]
+    public async Task<IActionResult> SignUp(SignUpViewModel viewModel)
     {
-        var viewModel = new SignUpViewModel();
+        if (ModelState.IsValid)  
+        {
+            var result = await _userService.CreateUserAsync(viewModel.Form);
+            if (result.StatusCode == Infrastructure.Models.StatusCode.OK)
+                return RedirectToAction("SignIn", "Auth");
+        }
+
         return View(viewModel);
     }
 
-    [Route("/signup")]
+
+    [Route("/signin")]
+    [HttpGet]
+
+    public IActionResult SignIn() => View(new SignInViewModel());
+
+    [Route("/signin")]
     [HttpPost]
-    public IActionResult SignUp(SignUpViewModel viewModel)
+
+    public IActionResult SignIn(SignInViewModel viewModel)
     {
         if (!ModelState.IsValid)
-        return View(viewModel);
+        {
+            viewModel.ErrorMessage = "Incorrect email or password";
+            return View(viewModel);
+        }
 
-        return RedirectToAction("SignIn", "Auth");
+
+        return RedirectToAction("Index", "Home");
     }
 }

@@ -1,7 +1,7 @@
-﻿using SiliconAssignment.Helpers;
+﻿using Infrastructure.Helpers;
 using System.ComponentModel.DataAnnotations;
 
-namespace SiliconAssignment.Models;
+namespace Infrastructure.Models;
 
 public class SignUpModel
 {
@@ -38,6 +38,4 @@ public class SignUpModel
     [Display(Name = "I agree to the Terms & Conditions.", Order = 5)]
     [CheckBoxRequired(ErrorMessage = "You have to agree the Terms & Conditions")]
     public bool Terms { get; set; } = false;
-
 }
-
