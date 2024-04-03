@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿
+@inject SignInManager<UserEntity> _signInManager;
+
+
+<!DOCTYPE html>
 <html lang="sv-se">
 <head>
         <meta charset="UTF-8" />
@@ -31,8 +35,16 @@
             </div>
 
             <div class="account-buttons">
-                <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-regular fa-user"></i><span>Sign In</span></a>
-                <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
+                @if (_signInManager.IsSignedIn(User))
+                {
+                    <a class="btn-gray" asp-controller="Account" asp-action="Account"><i class="fa-regular fa-user"></i><span>Account</span></a>
+                    <a class="btn-theme" asp-controller="Auth" asp-action="SignOut"><i class="fa-regular fa-user"></i><span>Sign Out</span></a>
+                }
+                else
+                {
+                    <a class="btn-gray" asp-controller="Auth" asp-action="SignIn"><i class="fa-regular fa-user"></i><span>Sign In</span></a>
+                    <a class="btn-theme" asp-controller="Auth" asp-action="SignUp"><i class="fa-regular fa-user"></i><span>Sign Up</span></a>
+                }
             </div>
         </div>
     </header>

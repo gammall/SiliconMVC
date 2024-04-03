@@ -47,6 +47,12 @@
                     <span class="error-message" asp-validation-for="Form.Terms"></span>
                 </div>
             </div>
+
+            @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+            {
+                <div class="error">@ViewData["ErrorMessage"]</div>
+            }
+
             <button class="btn-theme-s" id="form-submit" type="submit">@Model.Title</button>
         </form>
     </div>

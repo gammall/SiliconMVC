@@ -1,4 +1,5 @@
 using Infrastructure.Contexts;
+using Infrastructure.Entities;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -9,11 +10,22 @@ builder.Services.AddControllersWithViews();
 
 
 
-builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("LocalDataBase")));
+builder.Services.AddDefaultIdentity<UserEntity>(x =>
+{
+    x.User.RequireUniqueEmail = true;
+    x.SignIn.RequireConfirmedAccount = false;
+    x.Password.RequireNonAlphanumeric = false;
+    x.Password.RequireDigit = false;
+    x.Password.RequireUppercase = false;
+    x.Password.RequireNonAlphanumeric = false;
+}).AddEntityFrameworkStores<DataContext>();
+
 builder.Services.AddScoped<AddressRepo>();
 builder.Services.AddScoped<UserRepo>();
 builder.Services.AddScoped<AddressService>();
-builder.Services.AddScoped<UserService>();
+
+
 
 var app = builder.Build();
 app.UseHsts();

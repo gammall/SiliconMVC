@@ -8,4 +8,6 @@ public class SignUpViewModel
 
     public SignUpModel Form { get; set; } = new SignUpModel();
 
+    public string? ErrorMessage {  get; set; }
+
 }

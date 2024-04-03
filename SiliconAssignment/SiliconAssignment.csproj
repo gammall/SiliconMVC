@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
+    <Content Remove="wwwroot\css\scss\sections\account.scss" />
   </ItemGroup>
 
   <ItemGroup>
