@@ -1,1 +1,5 @@
-﻿<partial name="~/Views/Shared/Sections/_LandingPage.cshtml" />
+﻿@{
+    ViewData["Title"] = "Overview";
+}
+
+@await Html.PartialAsync("~/Views/Shared/Sections/_LandingPage.cshtml")
