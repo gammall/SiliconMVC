@@ -1,5 +1,6 @@
 using Infrastructure.Contexts;
 using Infrastructure.Entities;
+using Infrastructure.Helpers.Middlewares;
 using Infrastructure.Repositories;
 using Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -25,13 +26,21 @@ builder.Services.AddScoped<AddressRepo>();
 builder.Services.AddScoped<UserRepo>();
 builder.Services.AddScoped<AddressService>();
 
-
+builder.Services.ConfigureApplicationCookie(x =>
+{
+    x.Cookie.HttpOnly = true;
+    x.LoginPath = "/signin";
+    x.LogoutPath = "/signout";
+});
 
 var app = builder.Build();
 app.UseHsts();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseUserSessionValidation();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",

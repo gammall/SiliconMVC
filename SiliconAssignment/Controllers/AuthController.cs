@@ -13,6 +13,8 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     private readonly UserManager<UserEntity> _userManager = userManager;
     private readonly SignInManager<UserEntity> _signInManager = signInManager;
 
+    // ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+
     [Route("/signup")]
     [HttpGet]
     public IActionResult SignUp() {
@@ -59,6 +61,10 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     }
 
 
+    // ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+
+
+
     [Route("/signin")]
     [HttpGet]
 
@@ -91,6 +97,12 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
         viewModel.ErrorMessage = "Incorrect email or password";
         return View(viewModel);
     }
+
+
+
+    // ((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((((
+
+
 
     [Route("/signout")]
     [HttpGet]
