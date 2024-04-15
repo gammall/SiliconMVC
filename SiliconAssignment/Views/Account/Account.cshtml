@@ -1,0 +1,103 @@
+﻿@model AccountViewModel
+
+@{
+    ViewData["Title"] = $"";
+}
+
+
+<section id="accountdetails">
+    <div class="container">
+        <div class="left">
+
+            <div class="user">
+                <img src="/images/profile.png"/>
+@*                 <h2>@Model.Account.FirstName</h2>
+                <p>@Model.Account.Email</p> *@
+            </div>
+
+            <div class="option">
+                <button class="btn-theme-s">Account Details</button>
+                <button class="btn-gray">Sign Out</button>
+            </div>
+
+        </div>  
+        <div class="right">
+            <h1>Account Details</h1>
+
+
+            <form method="post" id="basicinfo" asp-controller="Account" asp-action="Account" novalidate>
+
+                <p>Basic Info</p>
+                    <div id="content">
+                        <div id="account-firstname" class="input-group">
+                            <label asp-for="Account.FirstName"></label>
+                            <span class="error-message" asp-validation-for="Account.FirstName"></span>
+                            <input asp-for="Account.FirstName"/>
+                        </div>
+
+                        <div id="account-lastname" class="input-group">
+                            <label asp-for="Account.LastName"></label>
+                            <span class="error-message" asp-validation-for="Account.LastName"></span>
+                            <input asp-for="Account.LastName" />
+                        </div>
+
+                        <div id="account-email" class="input-group">
+                            <label asp-for="Account.Email"></label>
+                            <span class="error-message" asp-validation-for="Account.Email"></span>
+                            <input asp-for="Account.Email" />
+                        </div>
+
+                        <div id="account-phone" class="input-group">
+                            <label asp-for="Account.Phone"></label>
+                            <span class="error-message" asp-validation-for="Account.Phone"></span>
+                            <input asp-for="Account.Phone" />
+                        </div>
+
+                        <div id="account-bio" class="input-group">
+                            <label asp-for="Account.Biography"></label>
+                            <textarea asp-for="Account.Biography"></textarea>
+                            <span class="error-message" asp-validation-for="Account.Biography"></span>
+                        </div>
+                    </div>
+
+                <div class="buttons">
+                    <button class="btn-gray" type="reset">Cancel</button>
+                    <button class="btn-theme-s" id="form-submit" type="submit">Save Changes</button>
+                </div>
+            </form>
+
+
+
+
+            <form method="post" id="addressinfo" asp-controller="Account" asp-action="Account" novalidate>
+
+                <p>Address Info</p>
+                <div id="contentaddress">
+                    <div id="address-streetname" class="input-group">
+                        <label asp-for="Address.StreetName">Address</label>
+                        <span class="error-message" asp-validation-for="Address.StreetName"></span>
+                        <input asp-for="Address.StreetName" />
+                    </div>
+
+                    <div id="address-postalcode" class="input-group">
+                        <label asp-for="Address.PostalCode"></label>
+                        <span class="error-message" asp-validation-for="Address.PostalCode"></span>
+                        <input asp-for="Address.PostalCode" />
+                    </div>
+
+                    <div id="address-city" class="input-group">
+                        <label asp-for="Address.City"></label>
+                        <span class="error-message" asp-validation-for="Address.City"></span>
+                        <input asp-for="Address.City" />
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn-gray" type="reset">Cancel</button>
+                    <button class="btn-theme-s" id="form-submit" type="submit">Save Changes</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</section>

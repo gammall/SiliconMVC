@@ -2,9 +2,9 @@
 
 namespace SiliconAssignment.ViewModels;
 
+
 public class AccountViewModel
 {
-    public string Title { get; set; } = "Account Details";
-
-    public AccountModel Account { get; set; } = new AccountModel();
+    public AccountModel Account { get; set; } = null!;
+    public AddressModel Address { get; set; } = null!;
 }

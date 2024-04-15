@@ -1,3 +1,123 @@
 #accountdetails {
-    background-color: white;
+    height: 100%;
+    margin-bottom: 300px;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        align-items: start;
+        height: 700px;
+        margin-bottom: 50px;
+    }
+
+    .left {
+        width: 25%;
+        border-right: 1px solid $gray-400;
+        padding: 10px;
+
+        .user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            img {
+                width: 120px;
+            }
+        }
+
+        .option {
+            display: flex;
+            flex-direction: column;
+            padding: 10px;
+
+            button {
+                border-radius: 14px;
+                display: flex;
+                justify-content: start;
+            }
+
+            .btn-gray {
+                background-color: white !important;
+                color: $theme;
+            }
+
+            .btn-gray:hover {
+                background-color: $gray-700 !important;
+                color: white !important;
+            }
+        }
+    }
+
+    .right {
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        margin-left: 10px;
+        align-items: start;
+
+        p {
+            color: purple;
+        }
+
+        form {
+            padding: 1rem;
+
+            #content {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "firstname lastname" "email phone" "biography biography";
+
+                #account-firstname {
+                    grid-area: firstname;
+                }
+
+                #account-lastname {
+                    grid-area: lastname;
+                }
+
+                #account-email {
+                    grid-area: email;
+                }
+
+                #account-phone {
+                    grid-area: phone;
+                }
+
+                #account-bio {
+                    grid-area: biography;
+                }
+            }
+
+            .buttons {
+                display: flex;
+                margin-top: 25px;
+                border-bottom: 1px solid $gray-400;
+                padding-bottom: 10px;
+
+                button {
+                    margin-right: 10px;
+                }
+            }
+
+            #contentaddress {
+                display: grid;
+                gap: 1rem 2rem;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "streetname streetname" "postalcode city";
+                
+                #address-streetname {
+                    grid-area: streetname;
+                }
+                #address-postalcode {
+                    grid-area: postalcode;
+                }
+                #address-city {
+                    grid-area: city;
+                }
+            }
+        }
+    }
 }

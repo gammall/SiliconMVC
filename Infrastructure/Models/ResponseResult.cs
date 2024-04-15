@@ -13,5 +13,5 @@ public class ResponseResult
     public StatusCode Status { get; set; }
     public object? ContentResult { get; set; }
     public string? Message { get; set; }
-    public StatusCode StatusCode { get; internal set; }
+    public StatusCode StatusCode { get; set; }
 }

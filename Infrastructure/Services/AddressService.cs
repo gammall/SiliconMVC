@@ -54,4 +54,14 @@ public class AddressService(AddressRepo repository)
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
 
+    public async Task<ResponseResult> GetAddressByIdAsync(int Id)
+    {
+        try
+        {
+            var result = await _repository.GetOneAsync(x => x.Id == Id);
+            return result;
+        }
+        catch (Exception ex) { throw new ApplicationException("Failed to retrieve address", ex); }
+    }
+
 }
