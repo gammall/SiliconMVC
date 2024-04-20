@@ -54,7 +54,7 @@ public class AddressService(AddressRepo repository)
         catch (Exception ex) { return ResponseFactory.Error(ex.Message); }
     }
 
-    public async Task<ResponseResult> GetAddressByIdAsync(int Id)
+    public async Task<ResponseResult> GetAddressByIdAsync(int? Id)
     {
         try
         {

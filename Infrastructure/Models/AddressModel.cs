@@ -4,7 +4,7 @@ namespace Infrastructure.Models;
 
 public class AddressModel
 {
-    public int Id { get; set; }
+    public int? Id { get; set; }
 
 
     [Required(ErrorMessage = "A valid address is required")]

@@ -3,9 +3,7 @@
 namespace Infrastructure.Models;
 
 public class AccountModel
-{
-    public string UserId { get; set; } = null!;
-    
+{   
 
     [Required(ErrorMessage = "A valid first name is required")]
     [DataType(DataType.Text)]

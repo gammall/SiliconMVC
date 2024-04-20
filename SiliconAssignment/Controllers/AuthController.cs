@@ -1,4 +1,5 @@
 ﻿using Infrastructure.Entities;
+using Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -87,6 +88,7 @@ public class AuthController(UserManager<UserEntity> userManager, SignInManager<U
     {
         if (ModelState.IsValid)
         {
+
             var result = await _signInManager.PasswordSignInAsync(viewModel.Form.Email, viewModel.Form.Password, viewModel.Form.RememberMe, false);
             if (result.Succeeded)
             {
