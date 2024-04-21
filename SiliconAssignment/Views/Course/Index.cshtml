@@ -5,6 +5,7 @@
 
 <section class="courses">
     <div class="container">
+        <div class="title">
         <h1>Courses</h1>
         <form id="form-filters">
             <select>
@@ -12,9 +13,10 @@
             </select>
             <div class="input-search-group">
                 <input id="searchQuery" name="searchQuery" placeholder="Search Courses"/>
-                <i class="fa-regular fa-search"></i>
+                <i class="fa-search"></i>
             </div>
         </form>
+        </div>
         <div class="course-items">
             @if (Model.Courses != null)
             {
