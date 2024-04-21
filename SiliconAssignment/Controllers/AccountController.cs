@@ -51,15 +51,6 @@ public class AccountController(UserManager<UserEntity> userManager, SignInManage
 
         return View(viewModel);
 
-
-        //var AccountInfo = await PopulateAccountInfoAsync();
-        //var AddressInfo = await PopulateAddressInfoAsync();
-        //var info = new AccountViewModel
-        //{
-        //    Account = AccountInfo,
-        //    Address = AddressInfo
-        //};
-        //return View(info);
     }
 
     // )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
@@ -142,51 +133,4 @@ public class AccountController(UserManager<UserEntity> userManager, SignInManage
 
             return RedirectToAction("account", "account");
     }
-
-    // )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-
-
-    //private async Task<AccountModel> PopulateAccountInfoAsync()
-    //{
-    //    var user = await _userManager.GetUserAsync(User);
-
-    //    var Account = new AccountModel
-    //    {
-    //        UserId = user.Id,
-    //        FirstName = user.FirstName,
-    //        LastName = user.LastName,
-    //        Email = user.Email!,
-    //        Phone = user.PhoneNumber,
-    //        AddressId = user?.AddressId,
-    //    };
-    //    return Account;
-    //}
-
-    //private async Task<AddressModel> PopulateAddressInfoAsync()
-    //{
-    //    var user = await _userManager.GetUserAsync(User);
-
-    //    if (user == null)
-    //        return null!;
-
-
-    //    var response = await _addressService.GetAddressByIdAsync(user.AddressId);
-    //    if (response.Message != "Succeeded")
-    //        return new AddressModel();
-
-    //    AddressEntity address = (AddressEntity)response.ContentResult!;
-    //    var addressModel = new AddressModel
-    //    {
-    //        Id = user.AddressId,
-    //        StreetName = address.StreetName,
-    //        City = address.City,
-    //        PostalCode = address.PostalCode,
-    //    };
-    //    return addressModel;
-    //}
-
-    // )))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
-
-
 }
